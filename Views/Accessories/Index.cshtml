@@ -1,0 +1,27 @@
+﻿
+
+
+
+@{
+    ViewBag.Title = "Computer Accessories";
+}
+
+<h2>Computer Accessories</h2>
+
+<ul id="product-list">
+    <li>
+        <img src="~/Images/myimages/keyboard/images%20(20).jpg" />
+       @* <img src="~/Images/ProductPics/AFC Red-White Bar Scarf.jpg" width="300" height="300" />*@
+            <h3 style="text-align:center">@Html.ActionLink("Keyboard", "Keyboard", "Accessories")</h3>
+    </li>
+    <li>
+        <img src="~/Images/myimages/mouse/mouse1.jpg" />
+        @*<img src="~/Images/ProductPics/Junior Bronx Hat.jpg" width="300" height="300" />*@
+            <h3 style="text-align:center">@Html.ActionLink("Mouse", "Mouse", "Accessories")</h3>
+    </li>
+    <li>
+        <img src="~/Images/myimages/cd%20rom/cd1.jpg" />
+        @*<img src="~/Images/ProductPics/AFC SS Cannon Black Inlay Ring.jpg" width="300" height="300" />*@
+            <h3 style="text-align:center">@Html.ActionLink("CD-ROM", "CD-ROM", "Accessories")</h3>
+    </li>
+</ul>

@@ -1,0 +1,19 @@
+﻿@using Online.Shopping.Store
+@model IEnumerable<Product>
+
+@{
+    ViewBag.Title = "Computer Accessories";
+}
+
+<h2>Mouse <span style="font-size:50%"><< @Html.ActionLink("Accessories", "Mouse" ,"Accessories")</span></h2>
+
+<ul id="product-list">
+    @foreach (var item in Model)
+    {
+        <li>
+            <img src="@Url.Content(item.ProductPicUrl)" width="300" height="300" />
+            <h3 style="text-align: center">@Html.ActionLink(item.ProductName, "Details", new { id = item.ProductId })</h3>
+            <h3 style="color: red; margin-top: 2px">RS= @item.ProductPrice</h3>
+        </li>
+    }
+</ul>

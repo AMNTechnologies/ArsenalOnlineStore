@@ -1,0 +1,110 @@
+﻿@using Online.Shopping.Store
+@model Product
+
+@{
+    ViewBag.Title = "Products";
+    string category = null;
+    string stringLink = null;
+    if (Model.ProductCategory == "Nokia")
+    {
+        category = stringLink = "Nokia";
+    }
+    if (Model.ProductCategory == "Samsung")
+    {
+        category = stringLink = "Samsung";
+    }
+    if (Model.ProductCategory == "QMobile")
+    {
+        category = "QMobile";
+        stringLink = "Q Mobile";
+    }
+    if (Model.ProductCategory == "HTC")
+    {
+        category = "HTC";
+        stringLink = "HTC";
+    }
+    if (Model.ProductCategory == "BlackBerry")
+    {
+        category = "BlackBerry";
+        stringLink = "BlackBerry";
+    }
+    if (Model.ProductCategory == "Tower")
+    {
+        category = "Tower";
+        stringLink = "Tower";
+    }
+    if (Model.ProductCategory == "Desktop")
+    {
+        category = "Desktop";
+        stringLink = "Desktop";
+    }
+    if (Model.ProductCategory == "Server")
+    {
+        category = "Server";
+        stringLink = "Server";
+    }
+    if (Model.ProductCategory == "Keyboard")
+    {
+        category = stringLink = "Keyboard";
+    }
+    if (Model.ProductCategory == "Mouse")
+    {
+        category = stringLink = "Mouse";
+    }
+    if (Model.ProductCategory == "CD-ROM")
+    {
+        category = stringLink = "CD-ROM";
+    }
+    if (Model.ProductCategory == "HP")
+    {
+        category = "HP";
+        stringLink = "HP";
+    }
+    if (Model.ProductCategory == "Dell")
+    {
+        category = "Dell";
+        stringLink = "Dell";
+    }
+    if (Model.ProductCategory == "Acer")
+    {
+        category = "Acer";
+        stringLink = "Acer";
+    }
+    if (Model.ProductCategory == "Minilaptops")
+    {
+        category = "Minilaptops";
+        stringLink = "Minilaptops";
+    }
+}
+
+
+<h2>Product Details <span style="font-size: 50%"> << @Html.ActionLink("Home", "index", "Home")</span></h2>
+
+<table>
+    <tr>
+        <td rowspan="4">
+            <img src="@Url.Content(Model.ProductPicUrl)" width="300" height="300" /></td>
+        <td>
+            <h3>@Model.ProductName</h3>
+            <h3 style="color: red; margin-top: 2px">RS= @Model.ProductPrice</h3>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Color: </label>@Model.ProductColor
+            <label>Material: </label>@Model.ProductMatertial
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Information: </label>
+            @Model.ProductInfo
+        </td>
+    </tr>
+    <tr>
+        <td>
+               <h3>@Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.ProductId }, "")</h3> 
+        </td>
+    </tr>
+</table>
+

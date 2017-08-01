@@ -1,0 +1,42 @@
+﻿@using Online.Shopping.Store
+@model Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Product</legend>
+
+    <p>
+        <b>@Html.DisplayNameFor(model => model.ProductName) :   </b> @Html.DisplayFor(model => model.ProductName)
+        <br />
+        <b>@Html.DisplayNameFor(model => model.ProductPrice) :   </b> @Html.DisplayFor(model => model.ProductPrice)
+        <br />
+        <b>@Html.DisplayNameFor(model => model.ProductCategory) :   </b> @Html.DisplayFor(model => model.ProductCategory)
+        <br />
+       @* <b>@Html.DisplayNameFor(model => model.ProductType) :   </b> @Html.DisplayFor(model => model.ProductType)
+        <br />
+        <b>@Html.DisplayNameFor(model => model.ProductDepartment) :   </b> @Html.DisplayFor(model => model.ProductDepartment)
+        <br />*@
+        <b>@Html.DisplayNameFor(model => model.ProductMatertial) :   </b> @Html.DisplayFor(model => model.ProductMatertial)
+        <br />
+        <b>@Html.DisplayNameFor(model => model.ProductColor) :   </b> @Html.DisplayFor(model => model.ProductColor)
+        <br />
+        <b>@Html.DisplayNameFor(model => model.ProductInfo) :   </b> @Html.DisplayFor(model => model.ProductInfo)
+        <br />
+        @*<b>@Html.DisplayNameFor(model => model.ProductNeckType) :   </b> @Html.DisplayFor(model => model.ProductNeckType)
+        <br />
+        <b>@Html.DisplayNameFor(model => model.ProductSleve) :   </b> @Html.DisplayFor(model => model.ProductSleve)
+        <br />*@
+        <b>@Html.DisplayNameFor(model => model.ProductSales) :   </b> @Html.DisplayFor(model => model.ProductSales)
+        <br />
+        <b>@Html.DisplayNameFor(model => model.ProductPicUrl) :   </b> @Html.DisplayFor(model => model.ProductPicUrl)
+    </p>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProductId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

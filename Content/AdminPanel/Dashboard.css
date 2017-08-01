@@ -1,0 +1,48 @@
+﻿body {
+}
+
+
+
+.left {
+    height:1000px;
+    width:230px;
+    float:left;
+    
+}
+
+.right {
+    float:left;
+}
+.abc {
+   color:yellow;
+
+}
+
+#general {
+    /*background-color:yellow;*/
+    
+    height:auto;
+    width: auto;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    
+}
+
+    #general p {
+        margin-left:130px;
+        margin-top:0PX;
+    }
+
+#AddNewItem {
+    
+    padding-top:100px;
+    padding-left:175px;
+   
+}
+#table {
+    margin-top:5px;
+    
+    margin-left:0px;
+    
+}

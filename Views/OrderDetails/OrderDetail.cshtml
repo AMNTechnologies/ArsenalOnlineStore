@@ -1,0 +1,43 @@
+﻿@using Online.Shopping.Store
+@model OrderDetail
+
+@{
+    ViewBag.Title = "OrderDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Product</legend>
+
+    <p>
+        <b>@Html.DisplayNameFor(model => model.OrderId) : </b> @Html.DisplayFor(model => model.OrderId)
+        <br />
+        @*@Html.DisplayFor(model => model.Product.ProductPicUrl)*@
+        @* @Html.DisplayFor(model=>model.Product.ProductPicUrl)*@
+
+    <div>
+        @{
+            
+            var abc = ViewBag.RproductDetails.ProductPicUrl ;
+            }
+          <img src="@Url.Content(abc)" width="300" height="300" />
+    
+        <div style="float:right;text-align:match-parent">
+          
+         @Html.DisplayFor(model=> model.Product)        
+       </div>        
+    </div>
+    </p>
+
+</fieldset>
+<p>
+  @*  @Html.ActionLink("Edit", "Edit", new { id=Model.OrderId })*@
+    @Html.ActionLink("Back to List", "Order")
+</p>
+

@@ -1,0 +1,100 @@
+﻿@using Online.Shopping.Store
+@model IEnumerable<Order>
+
+@{
+    ViewBag.Title = "AdminPanel";
+}
+
+@{
+    ViewBag.Title = "main";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+ <link href="~/Content/AdminPanel/Dashboard.css" rel="stylesheet" />
+@*<link href="~/Content/ManagerIndex.css" rel="stylesheet" />*@
+<style type="text/css">
+
+    th
+    {
+        margin-right: 20px;
+        margin-left: 20px;
+        height:30px;
+        border-bottom: 2px solid grey;
+          background-color: #555555;
+          color:silver;
+          margin-top:0px;
+          padding-top:0px;
+    }
+
+    td
+    {
+        margin-right: 20px;
+        margin-left: 20px;
+        padding-bottom:20px;
+        padding-left:10px;
+        padding-right:20px;
+    }
+</style>
+
+
+<div id="general">  
+    <div class="left">
+
+    </div> 
+   <div class="right">
+    <p id="AddNewItem">
+         <h3>
+           All Products
+       </h3>
+        <img src="~/Images/Admin%20Panel/create.png" z-index="1"position="absolute"/>&nbsp;&nbsp;
+        @Html.ActionLink("Add New Product", "Create", new {@class="abc"})
+    </p>
+
+
+    <table id="table" style="margin-right: auto; margin-left: auto;">
+        <tr>
+            <th>
+              Order ID
+            </th>
+           
+            <th>
+                User Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+               Total Price
+            </th>
+            <th>Operations</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                  
+                  <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td> @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+             
+              @*  <td>
+                    
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+                </td>*@
+            </tr>
+        }
+
+    </table>
+   </div>
+ </div>

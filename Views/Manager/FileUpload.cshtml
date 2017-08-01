@@ -1,0 +1,22 @@
+﻿@using Online.Shopping.Store
+@model Product
+
+@{
+    ViewBag.Title = "FileUpload";
+    string name = Model.ProductName;
+    string picUrl = Model.ProductPicUrl;
+    
+}
+
+<h2>Image Upload</h2>
+
+<p>New Product: <em style="color: darkred">@name</em> successfully added! </p>
+<p>Please upload product image: </p>
+
+@using (Html.BeginForm("FileUpload", "Manager", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{  
+    <label for="file">Upload Image:</label> 
+    <input type="file" name="file" id="file" style="width: 100%;" /> 
+    <input type="submit" value="Upload" class="submit" /> 
+}
+

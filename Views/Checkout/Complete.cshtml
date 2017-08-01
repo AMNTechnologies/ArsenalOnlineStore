@@ -1,0 +1,31 @@
+﻿@model int
+@{
+    ViewBag.Title = "Checkout Complete";
+}
+
+
+
+@{
+    <link href="~/Content/Checkout.css" rel="stylesheet" />
+    
+    
+    }
+<h2>Checkout Complete</h2>
+<p>Thanks for your order! Your order number is: @Model</p>
+<p>An Email has been sent to your account.</p>
+<p>How about shopping for some more music in our 
+@Html.ActionLink("store", "Index", "Home")
+</p>
+<p>Account No. xxxxxxxxxxxxxx</p>
+
+
+
+<div>
+     <h3>      
+     Use following Method for online payments
+     </h3>
+    <br />
+    <a href="http://www.easypaisa.com.pk/index.php/en/easypaisa-shop/find-an-easypaisa-merchant" class="easypaisa"> <img src="~/Images/Clipboard01eas.jpg" /> </a> &nbsp;&nbsp;
+    <a href="http://www.westernunion.com/send-money-online" class="westernunion"><img src="~/Images/Checkout/western-union-curved-64px.png" /></a>&nbsp;&nbsp;
+    <a href="https://online.standardchartered.com/nfs/ibank/pk/foa/login.htm" class="standarcharter"><img src="~/Images/Checkout/stndcharter.jpg" /></a>&nbsp;&nbsp;
+</div>

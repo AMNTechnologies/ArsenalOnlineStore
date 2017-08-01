@@ -1,0 +1,114 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/AdminSite.css" rel="stylesheet" />
+    <title>_AdminLayout</title>
+</head>
+<body>
+    <div>
+        <div id="header">
+
+            <div id="hleft" >
+                <p id="headericon"></p>
+                 <p>Welcome to Admin Panel</p>
+            </div>
+            <div id="hright">
+                   <p id="adhome"><a title="" ></a></p>
+                   <p id="adlogout"><a title="" ></a></p>
+                  
+            </div>
+            
+
+        </div>
+
+
+        <div class="main">
+
+             <div id="leftpor">
+                 <div id="box1">
+                     <a href="@Url.Action("","")">
+                             <p id="box1pic">
+                             </p>
+                             <p id="box1txt">
+                                 Dashboard
+                             </p>
+                     </a>
+                 </div>
+                 <div id="box2">
+                         <a href="@Url.Action("AdOrderList","Manager")">
+                             <p id="box2pic">
+                             </p>
+                             <p id="box2txt">
+                                 Order List
+                             </p>
+                         </a>
+                 </div>
+                 <div id="box3">
+                     <a href="@Url.Action("AdUsers","Manager")">
+                      <p id="box3pic">
+                     </p>
+                     <p id="box3txt">
+                         Users
+                     </p>
+                     </a>
+                 </div>
+                 <div id="box4">
+                 <a href="@Url.Action("Prodcuts","Manager")">
+                         
+                             <p id="box4pic">
+                             </p>
+                             <p id="box4txt">
+                                  Products
+                             </p>
+                          </a>
+                     </div>
+
+                 <div id="box5">
+                     <a href="@Url.Action("","")">
+                     <p id="box5pic">
+
+                     </p>
+                      <p id="box5txt">
+                         Other
+                      </p>
+                     </a>
+                 </div>
+                 <div id="box6">
+                 </div>
+
+
+
+
+                 @*                 <div id="box6"></div>
+                 <div id="box7"></div>*@
+                 @*<div id="box8"></div>
+                 <div id="box9"></div>
+                 <div id="box10"></div>
+                 <div id="box11"></div>*@
+
+                left
+             </div>
+            <div id="rightpor">
+                @RenderBody()
+    
+                
+            </div>
+
+        </div>
+
+
+
+
+        <div id="footer"></div>
+       
+        
+
+    </div>
+</body>
+</html>

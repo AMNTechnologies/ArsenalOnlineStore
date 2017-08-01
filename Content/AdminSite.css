@@ -1,0 +1,267 @@
+﻿body {
+    padding:0px;
+    margin:0px;
+}
+
+#header {
+    height: 60px;
+    background-color: #585858;
+    margin-top: 0px;
+    padding-top: 0px;
+    display: block;
+    background-image: url('../Images/top.jpg');
+    
+
+}
+#hleft {
+    height: 40px;
+    width: 20px;
+    float: left;
+    width: 300px;
+    color: #FFFFFF;
+}
+#hright {
+    height:60px;
+    width:250px;    
+    float:right;
+    margin:0px;
+    padding:0px;
+    
+    
+  
+    
+}
+#adhome {
+    background-position: center center;
+    height: 30px;
+    width: 30px;
+    float: left;
+    
+    margin-left: 150px;
+    background-image: url('../Images/Admin Panel/screen.png');
+    background-repeat: no-repeat;
+}
+
+
+#adlogout {
+    background-position: center center;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: 0px;
+    
+    background-image: url('../Images/Admin Panel/logout.png');
+    background-repeat: no-repeat;
+}
+
+#header p {
+   /*margin:0px;
+   padding:5px;
+   color: #FFFFFF;
+   float:left;*/
+  
+    }
+
+
+
+#headericon {
+
+
+
+}
+.main {
+    height:900px;
+    width:100%;
+    padding-left:0px;
+    margin:0px;
+}
+
+#leftpor {
+    height: 900px;
+    width: 100px;
+    float: left;
+    display: block;
+    /*background-image: url('../Images/top.jpg');*/
+    
+}
+
+#box1 {
+    border-style: double none double none;
+    border-color: #515151;
+    border-width: 2px 0px 2px 0px;
+    height: 100px;
+    background-image: url('../Images/sidebar.jpg');
+
+}
+
+#box1pic {
+    
+    margin: 0px;
+    margin-left:35px;
+    margin-top:30px;
+    margin-right:20px;
+    margin-bottom:0px;
+    
+    width: 25px;
+    height: 20px;
+    background-image: url('../Images/dashboard.png');
+    
+    background-repeat: no-repeat;
+}
+#box1txt {
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width: 70px;
+    height: 20px;
+    color: #FFFFFF;
+}
+
+
+
+#box2 {
+    margin: 0px;   
+    border-style: none none double none;
+    border-color: #515151;
+    border-width: 2px 0px 2px 0px;
+    height: 100px;
+    background-image: url('../Images/sidebar.jpg');
+    background-color:green;
+}
+
+#box2pic {
+    margin: 0px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    float: left;
+    width: 35px;
+    height: 30px;
+    
+    background-image: url('../Images/order-149.png');
+    background-repeat: no-repeat;
+}
+#box2txt {
+    margin:0px;
+    width: 70px;
+    height: 20px;
+    margin-left:5px;
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+#box3 {
+    margin-top:0px;
+    border-style: none none double none;
+    border-color: #515151;
+    border-width: 2px 0px 2px 0px;
+    height: 100px;
+    background-image: url('../Images/sidebar.jpg');
+    background-color:green;
+    
+}
+
+#box3pic {
+    margin: 0px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    float: left;
+    width: 35px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-image: url('../Images/users.png');
+}
+#box3txt {
+    margin:0px;
+    width: 70px;
+    height: 20px;
+    margin-left:25px;
+    color: #FFFFFF;
+}
+
+
+
+#box4 {
+    border-style: none none double none;
+    border-color: #515151;
+    border-width: 2px 0px 2px 0px;
+    height: 100px;
+    background-image: url('../Images/sidebar.jpg');
+}
+
+
+#box4pic {
+    margin: 0px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    float: left;
+    width: 35px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-image: url('../Images/Admin Panel/1383824435_product.png');
+}
+#box4txt {
+    margin:0px;
+    width: 70px;
+    height: 20px;
+    margin-left:25px;
+    color: #FFFFFF;
+}
+
+#box5 {
+    border-style: none none double none;
+    border-color: #515151;
+    border-width: 2px 0px 2px 0px;
+    height: 100px;
+    background-image: url('../Images/sidebar.jpg');
+}
+
+
+#box5pic {
+    margin: 0px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    float: left;
+    width: 35px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-image: url('../Images/other.png');
+}
+#box5txt {
+    margin:0px;
+    width: 70px;
+    height: 20px;
+    margin-left:25px;
+    color: #FFFFFF;
+}
+
+#box6 {
+    border-style: none none double none;
+    border-color: #515151;
+    border-width: 2px 0px 2px 0px;
+    height: 400px;
+    background-image: url('../Images/sidebar.jpg');
+}
+
+
+
+
+
+
+#rightpor {
+    height:900px;
+    width:1333px;
+    
+}
+
+#footer {
+}

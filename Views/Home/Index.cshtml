@@ -1,0 +1,101 @@
+﻿@using Online.Shopping.Store
+@model List<Product>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@section featured {
+
+}
+
+<style>
+    #slider a:hover
+    {
+        background-color: transparent;
+    }
+</style>
+
+<div id="sliderFrame">
+    <div id="slider">
+        <a href="@Url.Action("Index", "Home")">
+            <img src="~/Images/myimages/slider1.jpg" alt="Get Mobiles Online." />
+
+        </a>
+        <a href="@Url.Action("Index", "Laptops")">
+            <img src="~/Images/myimages/slider2.jpg" alt="Buy Computers." />
+        </a>
+        <a href="@Url.Action("Index", "Computers")">
+            <img src="~/Images/myimages/slider3.jpg" alt="Buy new Laptops 2013/14." />
+        </a>
+        <a href="@Url.Action("Index", "Mobiles")">
+            <img src="~/Images/myimages/slider4.jpg" alt="Home Desktop sComputers." />
+        </a>
+    </div>
+    <!--thumbnails-->
+    <div id="thumbs">
+        <div class="thumb">
+            <div class="frame">
+                <img src="~/Images/myimages/slider1.jpg" />
+                @*<img src="Images/ProductPics/thumb1.jpg" />*@
+            </div>
+            <div class="thumb-content">
+                <p>Mobiles</p>
+                New Mobiles
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="thumb">
+            <div class="frame">
+                <img src="~/Images/myimages/slider2.jpg" />
+                
+            </div>
+            <div class="thumb-content">
+                <p>Computers Products</p>
+                New Computers Products
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="thumb">
+            <div class="frame">
+                <img src="~/Images/myimages/slider3.jpg" />
+                
+            </div>
+            <div class="thumb-content">
+                <p>New Laptops</p>
+                New Laptops 2013/14
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="thumb">
+            <div class="frame">
+                <img src="~/Images/myimages/slider4.jpg" />
+                
+            </div>
+            <div class="thumb-content">
+                <p>Desktop Computers</p>
+                New Desktop Computers
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <!--clear above float:left elements. It is required if above #slider is styled as float:left. -->
+    <div style="clear: both; height: 0;"></div>
+</div>
+
+
+<div>
+    <br />
+    <h3>Top Selling Products:</h3>
+    <ul id="product-list" style="font-size: .8em">
+        @foreach (var product in Model)
+        {
+            <li style="margin-right: 20px">
+                <img src="@Url.Content(product.ProductPicUrl)" width="75" height="75" />
+                <h3 style="text-align: center">@Html.ActionLink(product.ProductName, "Details", "Laptops", new { id = product.ProductId }, null)</h3>
+            </li>
+        }
+    </ul>
+</div>
+
+

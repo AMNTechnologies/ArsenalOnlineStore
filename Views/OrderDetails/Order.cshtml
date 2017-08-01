@@ -1,0 +1,94 @@
+﻿@using Online.Shopping.Store
+@model IEnumerable<OrderDetail>
+
+
+@{
+    ViewBag.Title = "OrderDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{
+    ViewBag.Title = "Order Details";
+}
+
+<style type="text/css">
+    th
+    {
+        margin-right: 10px;
+        margin-left: 10px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid grey;
+    }
+
+    td
+    {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+</style>
+
+<h2>Order Details</h2>
+
+@*<p>
+    @Html.ActionLink("Add New Product", "Create")
+</p>*@
+
+<div>
+    <table style="margin-right: auto; margin-left: auto;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.ProductType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDepartment)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductId)
+                </td>
+               @* <td>
+                    @Html.DisplayFor(modelItem => item.ProductType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductDepartment)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                   RS= @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                <td>
+                   @* @Html.ActionLink("Edit", "Edit", new { id = item.OrderDetailId }) |*@
+                    @Html.ActionLink("Details", "OrderDetail", new { orderid = item.OrderDetailId,productId=item.ProductId})
+         @*   @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

@@ -1,0 +1,140 @@
+﻿@using Online.Shopping.Store
+@model Product
+
+@{
+    ViewBag.Title = "Edit Product";
+}
+
+<h2>Edit Product Info</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="Add-Set">
+        <legend>Basic Info</legend>
+
+        @Html.HiddenFor(model => model.ProductId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductName)
+            @Html.ValidationMessageFor(model => model.ProductName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductPrice)
+            @Html.ValidationMessageFor(model => model.ProductPrice)
+        </div>
+    </fieldset>
+    
+    <fieldset class="Add-Set">
+        <legend>Category Info</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductCategory)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductCategory)
+            @Html.ValidationMessageFor(model => model.ProductCategory)
+        </div>
+
+       @* <div class="editor-label">
+            @Html.LabelFor(model => model.ProductType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductType)
+            @Html.ValidationMessageFor(model => model.ProductType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductDepartment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductDepartment)
+            @Html.ValidationMessageFor(model => model.ProductDepartment)
+        </div>*@
+
+    </fieldset>
+    <fieldset class="Add-Set">
+        <legend>Additional Info</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductMatertial)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductMatertial)
+            @Html.ValidationMessageFor(model => model.ProductMatertial)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductColor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductColor)
+            @Html.ValidationMessageFor(model => model.ProductColor)
+        </div>
+
+       @* <div class="editor-label">
+            @Html.LabelFor(model => model.ProductNeckType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductNeckType)
+            @Html.ValidationMessageFor(model => model.ProductNeckType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductSleve)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductSleve)
+            @Html.ValidationMessageFor(model => model.ProductSleve)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductSales)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductSales)
+            @Html.ValidationMessageFor(model => model.ProductSales)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductInfo)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.ProductInfo, new { cols = 35, @rows = 5 })
+            @Html.ValidationMessageFor(model => model.ProductInfo)
+        </div>
+
+    </fieldset>
+    <fieldset class="Add-Set">
+        <legend>Picture Info</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductPicUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductPicUrl)
+            @Html.ValidationMessageFor(model => model.ProductPicUrl)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

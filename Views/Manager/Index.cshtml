@@ -1,0 +1,95 @@
+﻿@using Online.Shopping.Store
+@model IEnumerable<Product>
+
+
+
+@*@{
+    Layout ="~/Views/Shared/_AdminLayout.cshtml";
+}*@
+@{
+    ViewBag.Title = "AdminPanel";
+}
+
+<link href="~/Content/ManagerIndex.css" rel="stylesheet" />
+<style type="text/css">
+
+    th
+    {
+        margin-right: 10px;
+        margin-left: 10px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid grey;
+    }
+
+    td
+    {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+</style>
+
+
+
+<p>
+    @Html.ActionLink("Add New Product", "Create")
+</p>
+
+<div>
+    <table style="margin-right: auto; margin-left: auto;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDepartment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductColor)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>&pound @Html.DisplayFor(modelItem => item.ProductPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCategory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductDepartment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductColor)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<div class="main">
+    
+
+</div>

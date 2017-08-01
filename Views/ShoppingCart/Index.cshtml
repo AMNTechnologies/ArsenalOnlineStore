@@ -1,0 +1,114 @@
+﻿@using Online.Shopping.Store
+@model ShoppingCartViewModel
+
+@{
+    ViewBag.Title = "Online Shopping Store";
+}
+
+<script src="/Scripts/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        // Document.ready -> link up remove event handler
+        $(".RemoveLink").click(function () {
+            // Get the id from the link
+            var recordToDelete = $(this).attr("data-id");
+            if (recordToDelete != '') {
+                // Perform the ajax post
+                $.post("/ShoppingCart/RemoveFromCart", { "id": recordToDelete },
+                    function (data) {
+                        // Successful requests get here
+                        // Update the page elements
+                        if (data.ItemCount == 0) {
+                            $('#row-' + data.DeleteId).fadeOut('slow');
+                        } else {
+                            $('#item-count-' + data.DeleteId).text(data.ItemCount);
+                        }
+                        $('#cart-total').text(data.CartTotal);
+                        $('#update-message').text(data.Message);
+                        $('#cart-status').text('Cart (' + data.CartCount + ')');
+                    });
+            }
+        });
+    });
+</script>
+
+<style type="text/css">
+    th
+    {
+        margin-right: 10px;
+        margin-left: 10px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid grey;
+    }
+
+    td
+    {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+</style>
+
+<h2>Shopping Cart</h2>
+
+<p class="button">
+    @Html.ActionLink("Checkout>>", "AddressAndPayment", "Checkout")
+</p>
+
+<div id="update-message">
+</div>
+
+<table style="margin-right: auto; margin-left: auto;">
+    <tr>
+        <th></th>
+        <th>Album
+        </th>
+        <th>Price
+        </th>
+        <th>Quantity
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.CartItems)
+    {
+        <tr id="row-@item.RecordId">
+            <td>
+                <img src="@Url.Content(item.Product.ProductPicUrl)" width="75" height="75" style="margin-left:auto; margin-right:auto;"/>
+            </td>
+            <td>
+                @Html.ActionLink(item.Product.ProductName, "Details", item.Product.ProductCategory, new { id = item.ProductId }, null)
+            </td>
+            <td>RS=
+                @item.Product.ProductPrice
+            </td>
+            <td id="item-count-@item.RecordId">
+                @item.Count
+            </td>
+            <td>
+                <a href="#" class="RemoveLink" data-id="@item.RecordId">Remove from cart</a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <th style="border: none">Total
+        </th>
+        <td style="color: red">
+            <h3 style="color: red; margin-top: -4px">RS=
+                <span id="cart-total" style="color: red; margin-top: -4px">
+                    @Model.CartTotal
+                </span>
+            </h3>
+        </td>
+    </tr>
+</table>
+
+
